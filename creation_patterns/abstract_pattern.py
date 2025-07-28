@@ -61,5 +61,5 @@ def build_ui(factory: GUIFactory):
 print("Building Windows UI:")
 build_ui(WinFactory())
 
-print("\nBuilding Mac UI:")
+print("Building Mac UI:")
 build_ui(MacFactory())

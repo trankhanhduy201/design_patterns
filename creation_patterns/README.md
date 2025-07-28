@@ -1,5 +1,8 @@
 # Creation Patterns
+
 Creational patterns provide the strategic way to create objects without hard-coding their types.
+
+---
 
 ## Abstract Factory Pattern
 The Abstract Factory Pattern provides an interface for creating families of related objects without specifying their concrete classes.
