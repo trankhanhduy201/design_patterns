@@ -4,7 +4,7 @@ class Staff:
         self.name = name
         self.position = position
 
-    def get_name(self):
+    def get_name(self) -> str:
         return self.name
 
 class Waiter(Staff):
@@ -24,6 +24,7 @@ class Order:
     
     def add_product(self, product_name: str):
         self.products.append(product_name)
+        return self
 
     def get_products(self) -> list:
         return self.products if self.products else []
@@ -37,14 +38,16 @@ class Cooking:
         if not self.order or not self.staff:
             raise ValueError('Can not make dishes')
         
-        for product in self.order.get_products():
-            print(f'{self.staff.get_name()} is making {product}')
+        for product_name in self.order.get_products():
+            print(f'{self.staff.get_name()} is making {product_name}')
 
 class Restaurent:
     @staticmethod
     def serve_customer(self):
         waiter = Waiter(id=1, name='Jimmy')
         order = Order(staff=waiter)
+        order.add_product('Pizza').add_product('Pasta').add_product('Noodle')
+        
         chief = Chief(id=2, name='Alex')
         cooking = Cooking(staff=chief, order=order)
         cooking.make_dishes()
